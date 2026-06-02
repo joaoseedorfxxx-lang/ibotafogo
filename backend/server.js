@@ -207,5 +207,28 @@ app.delete("/api/reset", (req, res) => {
   }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
+// 8. Rota de health check para verificar se o servidor está rodando
+app.get("/", (req, res) => {
+  res.json({ 
+    status: "online",
+    mensagem: "IBotafogo API v1.0 rodando com sucesso! ⚽",
+    versao: "1.0.0",
+    endpoints: [
+      "GET /api/dados",
+      "POST /api/jogadores",
+      "POST /api/dados",
+      "PUT /api/dados/:index",
+      "DELETE /api/dados/:index",
+      "DELETE /api/jogadores/:id",
+      "DELETE /api/reset"
+    ]
+  });
+});
+
+// Usar variável de ambiente PORT ou 3000 como padrão
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ IBotafogo API rodando na porta ${PORT}`);
+  console.log(`📍 URL: http://localhost:${PORT}`);
+  console.log(`🚀 Environment: ${process.env.NODE_ENV || 'development'}`);
+});
