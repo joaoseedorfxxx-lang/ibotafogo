@@ -1,0 +1,96 @@
+/* Importando uma fonte clean e moderna, similar à referência */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  /* Paleta de cores exata da referência */
+  --bg-deep: #0f1011;
+  --bg-popover: #1a1c1e;
+  --bg-tooltip: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --border-color: #31353a;
+  --active-red: #c1121f; /* Mantendo o vermelho de destaque dos botões */
+
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-primary);
+  background-color: var(--bg-deep);
+}
+
+body {
+  background-color: var(--bg-deep) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Polimento de botões Bootstrap para o tema */
+.btn-outline-light {
+  border-color: var(--border-color) !important;
+  color: var(--text-secondary) !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Botões de Alternância (Toggles) com estilo de referência */
+.btn-toggle-group .btn {
+  background-color: #111;
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.btn-toggle-group .btn.active {
+  background-color: var(--active-red);
+  color: white;
+  border-color: var(--active-red);
+}
+
+/* Container do Gráfico */
+.chart-wrapper {
+  background-color: var(--bg-deep);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* Customização de Checkboxes no Popover */
+.form-check-input {
+  background-color: transparent !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--active-red) !important;
+  border-color: var(--active-red) !important;
+}
+
+/* Sidebar de Legendas do Gráfico (Bump Chart) */
+.chart-legend-sidebar {
+  z-index: 10;
+}
+
+.legend-cluster {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 2px solid #555555;
+  padding-left: 8px;
+  transform: translateY(-50%);
+  gap: 2px;
+}
+
+.player-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.8);
+}
